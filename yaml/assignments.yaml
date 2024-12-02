@@ -1,0 +1,13 @@
+fake:
+  tier: 0
+  goaltype: relic
+  upgradeLimits: hostile
+  freegadgets: 1
+  mapArchetype: regular-medium
+  worldModifiers: worldmodifierfake
+  propertyChanges:
+    - monstermodifiers.totalrunweightmodifier = 1.1
+  challengePropertyChanges:
+    - monstermodifiers.totalrunweightmodifier = 2.5
+    - monsters.additionalwaveweight = 20
+    - monsters.minimumtimebetweenmonsters = 0.08

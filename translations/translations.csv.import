@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bx2xkhm6tlqw6"
+
+[deps]
+
+files=["res://mods-unpacked/POModder-FakeResources/translations/translations.en.translation", "res://mods-unpacked/POModder-FakeResources/translations/translations.fr.translation", "res://mods-unpacked/POModder-FakeResources/translations/translations.es.translation"]
+
+source_file="res://mods-unpacked/POModder-FakeResources/translations/translations.csv"
+dest_files=["res://mods-unpacked/POModder-FakeResources/translations/translations.en.translation", "res://mods-unpacked/POModder-FakeResources/translations/translations.fr.translation", "res://mods-unpacked/POModder-FakeResources/translations/translations.es.translation"]
+
+[params]
+
+compress=true
+delimiter=0

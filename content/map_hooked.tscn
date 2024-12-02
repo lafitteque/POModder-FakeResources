@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://j1tngpbyahha"]
+
+[ext_resource type="Script" path="res://mods-unpacked/POModder-FakeResources/content/map_hooked.gd" id="1_cumnv"]
+
+[node name="MapHooked" type="Node2D" groups=["map-mods"]]
+script = ExtResource("1_cumnv")

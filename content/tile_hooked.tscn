@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://coo5jvgj204ra"]
+
+[ext_resource type="Script" path="res://mods-unpacked/POModder-FakeResources/content/tile_hooked.gd" id="1_t8l6g"]
+
+[node name="TileHooked" type="Node2D" groups=["tile-mods"]]
+script = ExtResource("1_t8l6g")
