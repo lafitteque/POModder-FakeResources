@@ -9,6 +9,9 @@ const FAKE_SAND = "fake_sand"
 func _ready():
 	print("Map Hook Ready")
 	
+func init(map, fromDeserialize, defaultState):
+	pass
+	
 func revealTileVisually(map, tile, coord):
 	# Just reveal the tile visually if needed (idk a case where you wouldn't do it, but you can)
 	# Please, only reveal your type of tile by checking the type like below
@@ -32,22 +35,33 @@ func destroyTile(map, tile, withDropsAndSound):
 		map.addDrop(drop)
 		GameWorld.incrementRunStat("resources_mined")
 
+	var sound = null
+	match tile.type:
+		FAKE_IRON:
+			sound = map.find_child("TileDestroyedIron").duplicate(Node.DuplicateFlags.DUPLICATE_USE_INSTANTIATION)
+		FAKE_WATER:
+			sound = map.find_child("TileDestroyedWater").duplicate(Node.DuplicateFlags.DUPLICATE_USE_INSTANTIATION)
+		FAKE_SAND:
+			sound = map.find_child("TileDestroyedSand").duplicate(Node.DuplicateFlags.DUPLICATE_USE_INSTANTIATION)
+	if sound != null :	
+		sound.setSimulatedPosition(tile.global_position)
+		map.add_child(sound)
+		sound.play()
+		
+		
 func getSceneForTileType(tileType):
 	# Used for new chambers (like the relic or gadgets)
 	pass
 
-func init(fromDeserialize, defaultState):
-	# Called at the end of Map.init()
-	pass
 
-func beforeCaveGeneration(map, cavePackeScenes, minDistanceToCenter):
+func beforeCaveGeneration(map, cavePackeScenes, minDistanceToCenter, rand):
 	# Used to create your own cave generation, the cavePackScenes is used to generate the map caves.
 	# You can : 
 	# - Modify it to change the data
 	# - Make your own cave generation algorithm here
 	pass
 
-func afterCaveGeneration(map):
+func afterCaveGeneration(map, rand):
 	# If you need to do something just after the caves are generated
 	pass
 

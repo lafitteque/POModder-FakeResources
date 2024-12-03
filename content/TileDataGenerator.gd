@@ -12,10 +12,10 @@ func generate_resources(rand):
 	Utils.shuffle(original_cell_coords, rand)
 	var ironClusterCenters = $MapData.get_resource_cells_by_id(Data.TILE_IRON).duplicate()
 	
-	if Data.worldModifiers.has("worldmodifierfake"):
-		var fake_iron_rate = 15.0
-		var fake_water_rate = 5.0
-		var fake_sand_rate = 3.0
+	if "worldmodifierfake" in Level.loadout.modeConfig.get(CONST.MODE_CONFIG_WORLDMODIFIERS, []):
+		var fake_iron_rate = 20.0
+		var fake_water_rate = 10.0
+		var fake_sand_rate = 7.0
 		generate_curstom_tiles(ironClusterCenters, original_cell_coords, borderCells,fake_iron_rate, TILE_FAKE_IRON)
 		generate_curstom_tiles(ironClusterCenters, original_cell_coords, borderCells,fake_water_rate, TILE_FAKE_WATER)
 		generate_curstom_tiles(ironClusterCenters, original_cell_coords, borderCells,fake_sand_rate, TILE_FAKE_SAND)

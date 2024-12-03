@@ -16,21 +16,22 @@ func deserialize(tile):
 			tile.set_meta("destructable", true)
 			var v = Vector2(randi_range(0, 4), 0)
 			var path = "res://mods-unpacked/POModder-FakeResources/images/fake_resources_spritesheet.png"
-			tile.customInitResourceSprite(v , 5 , 2, path)
+			tile.customInitResourceSprite(v , 5 , 3, path)
 		FAKE_WATER: 
 			tile.set_meta("destructable", true)
 			var v = Vector2(randi_range(0,4), 1)
 			var path = "res://mods-unpacked/POModder-FakeResources/images/fake_resources_spritesheet.png"
-			tile.customInitResourceSprite(v , 5 , 2, path)
+			tile.customInitResourceSprite(v , 5 , 3, path)
 		FAKE_SAND: 
 			tile.set_meta("destructable", true)
 			var v = Vector2(randi_range(0,4), 2)
 			var path = "res://mods-unpacked/POModder-FakeResources/images/fake_resources_spritesheet.png"
-			tile.customInitResourceSprite(v , 5 , 2, path)
+			tile.customInitResourceSprite(v , 5 , 3, path)
 			
 func setTypeBegin(tile,type):
 	# Used for worldmodifier changed or in order to overwrite the data Map.gd gives to the tile
-	pass
+	# returns true if should force tile to be destructible
+	return false
 
 func setType(tile,type, baseHealth) -> float:
 	# Add visuals to the tile with customInitResourceSprite or by adding your own animation 
@@ -42,19 +43,19 @@ func setType(tile,type, baseHealth) -> float:
 			set_meta("destructable", true)
 			var v = Vector2(randi_range(0, 4), 0)
 			var path = "res://mods-unpacked/POModder-FakeResources/images/fake_resources_spritesheet.png"
-			tile.customInitResourceSprite(v , 5 , 2, path)
+			tile.customInitResourceSprite(v , 5 , 3, path)
 			baseHealth += Data.of("map.ironAdditionalHealth") + 2
 		FAKE_WATER:
 			set_meta("destructable", true)
 			var v = Vector2(randi_range(0,4), 1)
 			var path = "res://mods-unpacked/POModder-FakeResources/images/fake_resources_spritesheet.png"
-			tile.customInitResourceSprite(v , 5 , 2, path)
+			tile.customInitResourceSprite(v , 5 , 3, path)
 			baseHealth += Data.of("map.waterAdditionalHealth") + 2
 		FAKE_SAND:
 			set_meta("destructable", true)
 			var v = Vector2(randi_range(0,4), 2)
 			var path = "res://mods-unpacked/POModder-FakeResources/images/fake_resources_spritesheet.png"
-			tile.customInitResourceSprite(v , 5 , 2, path)
+			tile.customInitResourceSprite(v , 5 , 3, path)
 			baseHealth += Data.of("map.sandAdditionalHealth") + 2
 	Style.init(tile)
 	return baseHealth
