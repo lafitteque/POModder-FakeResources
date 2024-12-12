@@ -37,7 +37,6 @@ func setType(tile,type, baseHealth) -> float:
 	# Add visuals to the tile with customInitResourceSprite or by adding your own animation 
 	# (see "glass" in AllYouCanMine)
 	# Returns the new baseHealth
-	print("Tile Hook Set Type")
 	match type:
 		FAKE_IRON:
 			set_meta("destructable", true)

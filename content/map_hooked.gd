@@ -7,7 +7,7 @@ const FAKE_SAND = "fake_sand"
 @onready var data_mod = ModLoader.find_child("POModder-AllYouCanMine",true,false).data_mod
 	
 func _ready():
-	print("Map Hook Ready")
+	pass
 	
 func init(map, fromDeserialize, defaultState):
 	pass
@@ -15,7 +15,7 @@ func init(map, fromDeserialize, defaultState):
 func revealTileVisually(map, tile, coord):
 	# Just reveal the tile visually if needed (idk a case where you wouldn't do it, but you can)
 	# Please, only reveal your type of tile by checking the type like below
-	print("Map Hook Reveal Tile")
+	
 	if tile.type in [FAKE_IRON, FAKE_WATER, FAKE_SAND]:
 		map.revealTileVisually(coord)
 		tile.richness = 1
