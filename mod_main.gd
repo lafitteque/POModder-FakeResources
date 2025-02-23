@@ -31,16 +31,16 @@ func _ready():
 	
 func modInit():
 	await get_tree().create_timer(0.5).timeout
-	var allYouCanMineData = ModLoader.find_child("POModder-AllYouCanMine",true,false).data_mod
+	var dependencyData = ModLoader.find_child("POModder-Dependency",true,false).data_mod
 	
-	allYouCanMineData.add_drop_scene("fake_iron",preload("res://mods-unpacked/POModder-FakeResources/content/Drops/FakeIronDrop.tscn") , 1.0)
-	allYouCanMineData.add_tile(21, "fake_iron")
+	dependencyData.add_drop_scene("fake_iron",preload("res://mods-unpacked/POModder-FakeResources/content/Drops/FakeIronDrop.tscn") , 1.0)
+	dependencyData.add_tile(21, "fake_iron")
 	
-	allYouCanMineData.add_drop_scene("fake_water", preload("res://mods-unpacked/POModder-FakeResources/content/Drops/FakeWaterDrop.tscn"), 1.0)
-	allYouCanMineData.add_tile(22, "fake_water")
+	dependencyData.add_drop_scene("fake_water", preload("res://mods-unpacked/POModder-FakeResources/content/Drops/FakeWaterDrop.tscn"), 1.0)
+	dependencyData.add_tile(22, "fake_water")
 	
-	allYouCanMineData.add_drop_scene("fake_sand", preload("res://mods-unpacked/POModder-FakeResources/content/Drops/FakeSandDrop.tscn"), 1.0)
-	allYouCanMineData.add_tile(23, "fake_sand")
+	dependencyData.add_drop_scene("fake_sand", preload("res://mods-unpacked/POModder-FakeResources/content/Drops/FakeSandDrop.tscn"), 1.0)
+	dependencyData.add_tile(23, "fake_sand")
 	
 	
 	var map_hooked = preload("res://mods-unpacked/POModder-FakeResources/content/map_hooked.tscn").instantiate()

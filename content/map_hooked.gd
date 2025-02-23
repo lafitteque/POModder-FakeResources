@@ -4,7 +4,7 @@ const FAKE_IRON = "fake_iron"
 const FAKE_WATER = "fake_water"
 const FAKE_SAND = "fake_sand"
 
-@onready var data_mod = ModLoader.find_child("POModder-AllYouCanMine",true,false).data_mod
+@onready var data_mod = ModLoader.find_child("POModder-Dependency",true,false).data_mod
 	
 func _ready():
 	pass
