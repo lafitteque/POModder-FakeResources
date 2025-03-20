@@ -1,10 +1,10 @@
 {
 	"name": "FakeResources",
 	"namespace": "POModder",
-	"version_number": "0.1.0",
+	"version_number": "1.0.0",
 	"description": "A new tile that drops fake resources.",
 	"website_url": "https://",
-	"dependencies": ["POModder-AllYouCanMine"],
+	"dependencies": ["POModder-Dependency"],
 	"extra": {
 		"godot": {
 			"incompatibilities": [],
